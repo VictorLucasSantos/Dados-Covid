@@ -4,7 +4,9 @@ import os
 import streamlit as st
 
 url = "https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-states.csv"
-filename = "cases-brazil-states.csv"
+filename = os.path.join(
+    os.path.dirname(__file__), "..", "Data", "cases-brazil-states.csv"
+)
 
 if not os.path.exists(filename):
     print("Baixando arquivo...")
